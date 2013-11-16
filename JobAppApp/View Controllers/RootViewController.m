@@ -18,6 +18,7 @@
 - (void)createQuizObject;
 - (void)transitionToFavoriteAppView;
 - (void)transitionToPuzzleView;
+- (void)transitionToFinalQuestionView;
 @end
 
 @implementation RootViewController
@@ -66,7 +67,24 @@
 
 - (void)transitionToPuzzleView
 {
-    NSLog(@"Onward to puzzles!... er puzzle");
+    puzzleViewController = [[PuzzleViewController alloc] init];
+    puzzleViewController.delegate = self;
+    [self addChildViewController:puzzleViewController];
+
+    [self transitionFromViewController:appSelectionViewController
+                      toViewController:puzzleViewController
+                              duration:0.5
+                               options:UIViewAnimationOptionTransitionFlipFromRight
+                            animations:nil
+                            completion:^(BOOL finished) {
+                                [appSelectionViewController removeFromParentViewController];
+                                [puzzleViewController didMoveToParentViewController:self];
+                            }];
+}
+
+- (void)transitionToFinalQuestionView
+{
+    NSLog(@"Ask away...");
 }
 
 
@@ -92,5 +110,14 @@
     currentQuiz.favoriteAppName = appName;
 
     [self transitionToPuzzleView];
+}
+
+
+#pragma mark - PuzzleViewControllerDelegate Methods
+- (void)puzzleViewControllerSolvedPuzzleInSeconds:(NSNumber *)seconds
+{
+    currentQuiz.secondsToSolvePuzzle = seconds;
+
+    [self transitionToFinalQuestionView];
 }
 @end

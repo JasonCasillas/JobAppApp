@@ -17,7 +17,6 @@
 @property (nonatomic, strong) FontSelectionView *fontSelectionView;
 
 @property (nonatomic, weak) id <FontSelectionViewControllerDelegate> delegate;
-
 @end
 
 @protocol FontSelectionViewControllerDelegate <NSObject>

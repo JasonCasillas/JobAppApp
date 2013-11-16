@@ -22,7 +22,6 @@
 @property (nonatomic, weak) id <AppSelectionViewDelegate> delegate;
 
 - (void)tappedButton:(id)sender;
-
 @end
 
 @protocol AppSelectionViewDelegate <NSObject>

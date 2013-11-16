@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		661C98D818371AB900286AFE /* PuzzleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 661C98D718371AB900286AFE /* PuzzleViewController.m */; };
+		661C98DB18371B7400286AFE /* PuzzleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 661C98DA18371B7400286AFE /* PuzzleView.m */; };
 		6654A64D1836D66000CA2719 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6654A64C1836D66000CA2719 /* Foundation.framework */; };
 		6654A64F1836D66000CA2719 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6654A64E1836D66000CA2719 /* CoreGraphics.framework */; };
 		6654A6511836D66000CA2719 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6654A6501836D66000CA2719 /* UIKit.framework */; };
@@ -45,6 +47,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		661C98D618371AB900286AFE /* PuzzleViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PuzzleViewController.h; path = "View Controllers/PuzzleViewController.h"; sourceTree = "<group>"; };
+		661C98D718371AB900286AFE /* PuzzleViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PuzzleViewController.m; path = "View Controllers/PuzzleViewController.m"; sourceTree = "<group>"; };
+		661C98D918371B7400286AFE /* PuzzleView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PuzzleView.h; path = Views/PuzzleView.h; sourceTree = "<group>"; };
+		661C98DA18371B7400286AFE /* PuzzleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PuzzleView.m; path = Views/PuzzleView.m; sourceTree = "<group>"; };
 		6654A6491836D66000CA2719 /* JobAppApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JobAppApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6654A64C1836D66000CA2719 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6654A64E1836D66000CA2719 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -107,6 +113,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		661C98DC18371B7C00286AFE /* Puzzle */ = {
+			isa = PBXGroup;
+			children = (
+				661C98D618371AB900286AFE /* PuzzleViewController.h */,
+				661C98D718371AB900286AFE /* PuzzleViewController.m */,
+				661C98D918371B7400286AFE /* PuzzleView.h */,
+				661C98DA18371B7400286AFE /* PuzzleView.m */,
+			);
+			name = Puzzle;
+			sourceTree = "<group>";
+		};
 		6654A6401836D66000CA2719 = {
 			isa = PBXGroup;
 			children = (
@@ -145,6 +162,7 @@
 				6654A65E1836D66000CA2719 /* AppDelegate.m */,
 				66FD5B641836D96800ED948C /* RootViewController.h */,
 				66FD5B651836D96800ED948C /* RootViewController.m */,
+				661C98DC18371B7C00286AFE /* Puzzle */,
 				66A5E3291836F60D00C1D547 /* App Selection */,
 				66A5E3251836F5CD00C1D547 /* Font Selection */,
 				6654A6631836D66000CA2719 /* Images.xcassets */,
@@ -327,9 +345,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				66FD5B6D1836DC8400ED948C /* FontSelectionViewController.m in Sources */,
+				661C98DB18371B7400286AFE /* PuzzleView.m in Sources */,
 				6654A65F1836D66000CA2719 /* AppDelegate.m in Sources */,
 				66A5E32C1836FABE00C1D547 /* AppSelectionView.m in Sources */,
 				6654A65B1836D66000CA2719 /* main.m in Sources */,
+				661C98D818371AB900286AFE /* PuzzleViewController.m in Sources */,
 				66FD5B701836DD2700ED948C /* FontSelectionView.m in Sources */,
 				66FD5B661836D96800ED948C /* RootViewController.m in Sources */,
 				66A5E3281836F60700C1D547 /* AppSelectionViewController.m in Sources */,

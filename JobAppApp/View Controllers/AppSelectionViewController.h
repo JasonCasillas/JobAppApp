@@ -17,7 +17,6 @@
 @property (nonatomic, strong) AppSelectionView *appSelectionView;
 
 @property (nonatomic, weak) id <AppSelectionViewControllerDelegate> delegate;
-
 @end
 
 @protocol AppSelectionViewControllerDelegate <NSObject>

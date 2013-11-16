@@ -10,14 +10,16 @@
 
 #import "FontSelectionViewController.h"
 #import "AppSelectionViewController.h"
+#import "PuzzleViewController.h"
 
 @interface RootViewController : UIViewController <FontSelectionViewControllerDelegate,
-                                                  AppSelectionViewControllerDelegate>
+                                                  AppSelectionViewControllerDelegate,
+                                                  PuzzleViewControllerDelegate>
 {
     FontSelectionViewController *fontSelectionViewController;
     AppSelectionViewController  *appSelectionViewController;
+    PuzzleViewController        *puzzleViewController;
 }
 
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
-
 @end
