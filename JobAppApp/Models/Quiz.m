@@ -2,7 +2,7 @@
 //  Quiz.m
 //  JobAppApp
 //
-//  Created by Jason Casillas on 11/15/13.
+//  Created by Jason Casillas on 11/16/13.
 //  Copyright (c) 2013 The World Needs Heroes. All rights reserved.
 //
 
@@ -11,11 +11,11 @@
 
 @implementation Quiz
 
-@dynamic preferredFontName;
 @dynamic favoriteAppName;
-@dynamic secondsToSolvePuzzle;
-@dynamic isGoodExample;
-@dynamic startedAt;
 @dynamic finishedAt;
+@dynamic isGoodExampleOfCode;
+@dynamic preferredFontName;
+@dynamic secondsToSolvePuzzle;
+@dynamic startedAt;
 
 @end

@@ -3,9 +3,9 @@
     <entity name="Quiz" representedClassName="Quiz" syncable="YES">
         <attribute name="favoriteAppName" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="finishedAt" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="isGoodExample" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isGoodExampleOfCode" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="preferredFontName" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="secondsToSolvePuzzle" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="secondsToSolvePuzzle" optional="YES" attributeType="Integer 16" defaultValueString="0.0" syncable="YES"/>
         <attribute name="startedAt" optional="YES" attributeType="Date" syncable="YES"/>
     </entity>
     <elements>

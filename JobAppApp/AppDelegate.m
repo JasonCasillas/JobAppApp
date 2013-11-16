@@ -22,6 +22,7 @@
     // Override point for customization after application launch.
     self.rootViewController = [[RootViewController alloc] init];
     self.rootViewController.managedObjectContext = self.managedObjectContext;
+    [self.rootViewController createQuizObject];
     self.window.rootViewController = self.rootViewController;
 
     [self.window makeKeyAndVisible];

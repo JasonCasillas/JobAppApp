@@ -8,18 +8,27 @@
 
 #import <UIKit/UIKit.h>
 
+#import <MessageUI/MessageUI.h>
+#import <MessageUI/MFMailComposeViewController.h>
+
 #import "FontSelectionViewController.h"
 #import "AppSelectionViewController.h"
 #import "PuzzleViewController.h"
+#import "FinalQuestionViewController.h"
 
 @interface RootViewController : UIViewController <FontSelectionViewControllerDelegate,
                                                   AppSelectionViewControllerDelegate,
-                                                  PuzzleViewControllerDelegate>
+                                                  PuzzleViewControllerDelegate,
+                                                  FinalQuestionViewControllerDelegate,
+                                                  MFMailComposeViewControllerDelegate>
 {
     FontSelectionViewController *fontSelectionViewController;
     AppSelectionViewController  *appSelectionViewController;
     PuzzleViewController        *puzzleViewController;
+    FinalQuestionViewController *finalQuestionViewController;
 }
 
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;
+
+- (void)createQuizObject;
 @end

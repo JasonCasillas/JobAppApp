@@ -15,10 +15,11 @@
     Quiz *currentQuiz;
 }
 
-- (void)createQuizObject;
+- (void)storeFinishedQuiz;
 - (void)transitionToFavoriteAppView;
 - (void)transitionToPuzzleView;
 - (void)transitionToFinalQuestionView;
+- (void)shareResultsViaEmail;
 @end
 
 @implementation RootViewController
@@ -84,7 +85,49 @@
 
 - (void)transitionToFinalQuestionView
 {
-    NSLog(@"Ask away...");
+    finalQuestionViewController = [[FinalQuestionViewController alloc] init];
+    finalQuestionViewController.delegate = self;
+    [self addChildViewController:finalQuestionViewController];
+    
+    [self transitionFromViewController:puzzleViewController
+                      toViewController:finalQuestionViewController
+                              duration:0.5
+                               options:UIViewAnimationOptionTransitionFlipFromTop
+                            animations:nil
+                            completion:^(BOOL finished) {
+                                [puzzleViewController removeFromParentViewController];
+                                [finalQuestionViewController didMoveToParentViewController:self];
+                            }];
+}
+
+
+#pragma mark - Email Methods
+- (void)shareResultsViaEmail
+{
+    if ([MFMailComposeViewController canSendMail]) {
+        MFMailComposeViewController *mailViewController = [[MFMailComposeViewController alloc] init];
+        mailViewController.mailComposeDelegate = self;
+
+        [mailViewController setToRecipients:@[@"jason.casillas@gmail.com"]];
+
+        NSString *subjectString = @"Job App: Is there more code where that came from?";
+        NSString *exampleCodeString = @"This example was nice, but I'd like to see something using ...";
+        if ([currentQuiz.isGoodExampleOfCode boolValue]) {
+            subjectString = @"Job App: That'll do";
+            exampleCodeString = @"We might be in touch...";
+        }
+        [mailViewController setSubject:subjectString];
+
+        [mailViewController setMessageBody:[NSString stringWithFormat:@"I picked %@ because... \r\nI think %@ is great because... \r\nIt took me %i seconds to finish the puzzle.\r\n%@", currentQuiz.preferredFontName, currentQuiz.favoriteAppName, [currentQuiz.secondsToSolvePuzzle intValue], exampleCodeString, nil] isHTML:NO];
+
+        [self presentViewController:mailViewController animated:YES completion:nil];
+    } else {
+        NSLog(@"Device is unable to send email in its current state.");
+    }
+}
+
+- (void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 
@@ -93,6 +136,16 @@
 {
     currentQuiz = (Quiz *)[NSEntityDescription insertNewObjectForEntityForName:@"Quiz" inManagedObjectContext:self.managedObjectContext];
     currentQuiz.startedAt = [NSDate date];
+}
+
+- (void)storeFinishedQuiz
+{
+    currentQuiz.finishedAt = [NSDate date];
+
+    NSError *error;
+    if (![self.managedObjectContext save:&error]) {
+        NSLog(@"The finished quiz did not save with error: %@", [error userInfo]);
+    }
 }
 
 
@@ -119,5 +172,15 @@
     currentQuiz.secondsToSolvePuzzle = seconds;
 
     [self transitionToFinalQuestionView];
+}
+
+
+#pragma mark - FinalQuestionViewControllerDelegate Methods
+- (void)FinalQuestionViewControllerReceivedEnoughInformation:(BOOL)gaveEnoughInformation
+{
+    currentQuiz.isGoodExampleOfCode = [NSNumber numberWithBool:gaveEnoughInformation];
+
+    [self storeFinishedQuiz];
+    [self shareResultsViaEmail];
 }
 @end
