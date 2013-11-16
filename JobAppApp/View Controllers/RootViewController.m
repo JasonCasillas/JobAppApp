@@ -17,6 +17,7 @@
 
 - (void)createQuizObject;
 - (void)transitionToFavoriteAppView;
+- (void)transitionToPuzzleView;
 @end
 
 @implementation RootViewController
@@ -48,7 +49,24 @@
 #pragma mark - Transition Methods
 - (void)transitionToFavoriteAppView
 {
-    NSLog(@"This is where the transition would occur");
+    appSelectionViewController = [[AppSelectionViewController alloc] init];
+    appSelectionViewController.delegate = self;
+    [self addChildViewController:appSelectionViewController];
+
+    [self transitionFromViewController:fontSelectionViewController
+                      toViewController:appSelectionViewController
+                              duration:0.5
+                               options:UIViewAnimationOptionTransitionFlipFromBottom
+                            animations:nil
+                            completion:^(BOOL finished) {
+                                [fontSelectionViewController removeFromParentViewController];
+                                [appSelectionViewController didMoveToParentViewController:self];
+                            }];
+}
+
+- (void)transitionToPuzzleView
+{
+    NSLog(@"Onward to puzzles!... er puzzle");
 }
 
 
@@ -64,5 +82,15 @@
 - (void)fontSelectionViewControllerReceivedSelectedFontNamed:(NSString *)fontName
 {
     currentQuiz.preferredFontName = fontName;
+
+    [self transitionToFavoriteAppView];
+}
+
+#pragma mark - AppSelectionViewControllerDelegate Methods
+- (void)appSelectionViewControllerReceivedSelectedAppNamed:(NSString *)appName
+{
+    currentQuiz.favoriteAppName = appName;
+
+    [self transitionToPuzzleView];
 }
 @end

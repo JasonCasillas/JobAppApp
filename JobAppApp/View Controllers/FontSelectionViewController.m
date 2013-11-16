@@ -31,7 +31,7 @@
 
 
 #pragma mark - FontSelectionView Delegate Methods
-- (void)FontSelectionViewSelectedFontNamed:(NSString *)fontName
+- (void)fontSelectionViewSelectedFontNamed:(NSString *)fontName
 {
     NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
     [userDefaults setValue:fontName forKey:@"fontName"];

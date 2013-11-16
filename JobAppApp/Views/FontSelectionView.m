@@ -20,7 +20,7 @@
         NSString *fontSelectionString = @"Pick a Font";
         UIFont *labelFont = [UIFont systemFontOfSize:40.0];
         CGSize fontSelectionLabelSize = [fontSelectionString sizeWithAttributes:[NSDictionary dictionaryWithObject:labelFont forKey:NSFontAttributeName]];
-        fontSelectionLabel = [[UILabel alloc] initWithFrame:CGRectMake(self.bounds.size.width/2-fontSelectionLabelSize.width/2,
+        fontSelectionLabel = [[UILabel alloc] initWithFrame:CGRectMake(floorf(self.bounds.size.width/2-fontSelectionLabelSize.width/2),
                                                                        20.0,
                                                                        fontSelectionLabelSize.width,
                                                                        fontSelectionLabelSize.height)];
@@ -35,7 +35,7 @@
         float buttonGap = (self.bounds.size.height - (fontSelectionLabel.frame.origin.y+fontSelectionLabel.bounds.size.height)*2.0 - buttonHeight*4.0)/4.0;
         markerFeltButton = [UIButton buttonWithType:UIButtonTypeSystem];
         [markerFeltButton setTitle:@"Marker Felt" forState:UIControlStateNormal];
-        [markerFeltButton setFrame:CGRectMake(self.bounds.size.width/2-fontSelectionLabelSize.width/2,
+        [markerFeltButton setFrame:CGRectMake(floorf(self.bounds.size.width/2-fontSelectionLabelSize.width/2),
                                               fontSelectionLabel.frame.origin.y+fontSelectionLabel.bounds.size.height+buttonGap,
                                               fontSelectionLabelSize.width,
                                               buttonHeight)];
@@ -46,7 +46,7 @@
 
         helveticaNeueButton = [UIButton buttonWithType:UIButtonTypeSystem];
         [helveticaNeueButton setTitle:@"Helvetica Neue" forState:UIControlStateNormal];
-        [helveticaNeueButton setFrame:CGRectMake(self.bounds.size.width/2-fontSelectionLabelSize.width/2,
+        [helveticaNeueButton setFrame:CGRectMake(floorf(self.bounds.size.width/2-fontSelectionLabelSize.width/2),
                                                  markerFeltButton.frame.origin.y+markerFeltButton.bounds.size.height+buttonGap,
                                                  fontSelectionLabelSize.width,
                                                  buttonHeight)];
@@ -57,7 +57,7 @@
 
         noteworthyButton = [UIButton buttonWithType:UIButtonTypeSystem];
         [noteworthyButton setTitle:@"Noteworthy" forState:UIControlStateNormal];
-        [noteworthyButton setFrame:CGRectMake(self.bounds.size.width/2-fontSelectionLabelSize.width/2,
+        [noteworthyButton setFrame:CGRectMake(floorf(self.bounds.size.width/2-fontSelectionLabelSize.width/2),
                                               helveticaNeueButton.frame.origin.y+helveticaNeueButton.bounds.size.height+buttonGap,
                                               fontSelectionLabelSize.width,
                                               buttonHeight)];
@@ -68,7 +68,7 @@
 
         papyrusButton = [UIButton buttonWithType:UIButtonTypeSystem];
         [papyrusButton setTitle:@"Papyrus" forState:UIControlStateNormal];
-        [papyrusButton setFrame:CGRectMake(self.bounds.size.width/2-fontSelectionLabelSize.width/2,
+        [papyrusButton setFrame:CGRectMake(floorf(self.bounds.size.width/2-fontSelectionLabelSize.width/2),
                                            noteworthyButton.frame.origin.y+noteworthyButton.bounds.size.height+buttonGap,
                                            fontSelectionLabelSize.width,
                                            buttonHeight)];
@@ -105,6 +105,6 @@
         selectedFont = @"Papyrus";
     }
 
-    [self.delegate FontSelectionViewSelectedFontNamed:selectedFont];
+    [self.delegate fontSelectionViewSelectedFontNamed:selectedFont];
 }
 @end

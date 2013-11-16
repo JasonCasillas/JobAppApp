@@ -25,5 +25,5 @@
 @end
 
 @protocol FontSelectionViewDelegate <NSObject>
-- (void)FontSelectionViewSelectedFontNamed:(NSString *)fontName;
+- (void)fontSelectionViewSelectedFontNamed:(NSString *)fontName;
 @end

@@ -9,10 +9,13 @@
 #import <UIKit/UIKit.h>
 
 #import "FontSelectionViewController.h"
+#import "AppSelectionViewController.h"
 
-@interface RootViewController : UIViewController <FontSelectionViewControllerDelegate>
+@interface RootViewController : UIViewController <FontSelectionViewControllerDelegate,
+                                                  AppSelectionViewControllerDelegate>
 {
     FontSelectionViewController *fontSelectionViewController;
+    AppSelectionViewController  *appSelectionViewController;
 }
 
 @property (nonatomic, strong) NSManagedObjectContext *managedObjectContext;

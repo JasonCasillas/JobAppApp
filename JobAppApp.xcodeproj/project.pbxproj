@@ -22,6 +22,12 @@
 		6654A66E1836D66100CA2719 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6654A6521836D66000CA2719 /* CoreData.framework */; };
 		6654A6761836D66100CA2719 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6654A6741836D66100CA2719 /* InfoPlist.strings */; };
 		6654A6781836D66100CA2719 /* JobAppAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6654A6771836D66100CA2719 /* JobAppAppTests.m */; };
+		66A5E3281836F60700C1D547 /* AppSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A5E3271836F60700C1D547 /* AppSelectionViewController.m */; };
+		66A5E32C1836FABE00C1D547 /* AppSelectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A5E32B1836FABE00C1D547 /* AppSelectionView.m */; };
+		66A5E3321836FC4200C1D547 /* cravings_tracker_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 66A5E32E1836FC4200C1D547 /* cravings_tracker_icon@2x.png */; };
+		66A5E3331836FC4200C1D547 /* idea_bucket_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 66A5E32F1836FC4200C1D547 /* idea_bucket_icon@2x.png */; };
+		66A5E3341836FC4200C1D547 /* lotus_wei_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 66A5E3301836FC4200C1D547 /* lotus_wei_icon@2x.png */; };
+		66A5E3351836FC4300C1D547 /* stories_on_stix_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 66A5E3311836FC4200C1D547 /* stories_on_stix_icon@2x.png */; };
 		66FD5B661836D96800ED948C /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66FD5B651836D96800ED948C /* RootViewController.m */; };
 		66FD5B6D1836DC8400ED948C /* FontSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66FD5B6C1836DC8400ED948C /* FontSelectionViewController.m */; };
 		66FD5B701836DD2700ED948C /* FontSelectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 66FD5B6F1836DD2700ED948C /* FontSelectionView.m */; };
@@ -57,6 +63,14 @@
 		6654A6731836D66100CA2719 /* JobAppAppTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "JobAppAppTests-Info.plist"; sourceTree = "<group>"; };
 		6654A6751836D66100CA2719 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6654A6771836D66100CA2719 /* JobAppAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JobAppAppTests.m; sourceTree = "<group>"; };
+		66A5E3261836F60700C1D547 /* AppSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppSelectionViewController.h; path = "View Controllers/AppSelectionViewController.h"; sourceTree = "<group>"; };
+		66A5E3271836F60700C1D547 /* AppSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppSelectionViewController.m; path = "View Controllers/AppSelectionViewController.m"; sourceTree = "<group>"; };
+		66A5E32A1836FABE00C1D547 /* AppSelectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppSelectionView.h; path = Views/AppSelectionView.h; sourceTree = "<group>"; };
+		66A5E32B1836FABE00C1D547 /* AppSelectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppSelectionView.m; path = Views/AppSelectionView.m; sourceTree = "<group>"; };
+		66A5E32E1836FC4200C1D547 /* cravings_tracker_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cravings_tracker_icon@2x.png"; sourceTree = "<group>"; };
+		66A5E32F1836FC4200C1D547 /* idea_bucket_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "idea_bucket_icon@2x.png"; sourceTree = "<group>"; };
+		66A5E3301836FC4200C1D547 /* lotus_wei_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lotus_wei_icon@2x.png"; sourceTree = "<group>"; };
+		66A5E3311836FC4200C1D547 /* stories_on_stix_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stories_on_stix_icon@2x.png"; sourceTree = "<group>"; };
 		66FD5B641836D96800ED948C /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RootViewController.h; path = "View Controllers/RootViewController.h"; sourceTree = "<group>"; };
 		66FD5B651836D96800ED948C /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RootViewController.m; path = "View Controllers/RootViewController.m"; sourceTree = "<group>"; };
 		66FD5B6B1836DC8400ED948C /* FontSelectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FontSelectionViewController.h; path = "View Controllers/FontSelectionViewController.h"; sourceTree = "<group>"; };
@@ -131,12 +145,11 @@
 				6654A65E1836D66000CA2719 /* AppDelegate.m */,
 				66FD5B641836D96800ED948C /* RootViewController.h */,
 				66FD5B651836D96800ED948C /* RootViewController.m */,
-				66FD5B6B1836DC8400ED948C /* FontSelectionViewController.h */,
-				66FD5B6C1836DC8400ED948C /* FontSelectionViewController.m */,
-				66FD5B6E1836DD2700ED948C /* FontSelectionView.h */,
-				66FD5B6F1836DD2700ED948C /* FontSelectionView.m */,
+				66A5E3291836F60D00C1D547 /* App Selection */,
+				66A5E3251836F5CD00C1D547 /* Font Selection */,
 				6654A6631836D66000CA2719 /* Images.xcassets */,
 				66FD5B6A1836DBF400ED948C /* Models */,
+				66A5E32D1836FC4200C1D547 /* Images */,
 				6654A6551836D66000CA2719 /* Supporting Files */,
 			);
 			path = JobAppApp;
@@ -169,6 +182,39 @@
 				6654A6741836D66100CA2719 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		66A5E3251836F5CD00C1D547 /* Font Selection */ = {
+			isa = PBXGroup;
+			children = (
+				66FD5B6B1836DC8400ED948C /* FontSelectionViewController.h */,
+				66FD5B6C1836DC8400ED948C /* FontSelectionViewController.m */,
+				66FD5B6E1836DD2700ED948C /* FontSelectionView.h */,
+				66FD5B6F1836DD2700ED948C /* FontSelectionView.m */,
+			);
+			name = "Font Selection";
+			sourceTree = "<group>";
+		};
+		66A5E3291836F60D00C1D547 /* App Selection */ = {
+			isa = PBXGroup;
+			children = (
+				66A5E3261836F60700C1D547 /* AppSelectionViewController.h */,
+				66A5E3271836F60700C1D547 /* AppSelectionViewController.m */,
+				66A5E32A1836FABE00C1D547 /* AppSelectionView.h */,
+				66A5E32B1836FABE00C1D547 /* AppSelectionView.m */,
+			);
+			name = "App Selection";
+			sourceTree = "<group>";
+		};
+		66A5E32D1836FC4200C1D547 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				66A5E32E1836FC4200C1D547 /* cravings_tracker_icon@2x.png */,
+				66A5E32F1836FC4200C1D547 /* idea_bucket_icon@2x.png */,
+				66A5E3301836FC4200C1D547 /* lotus_wei_icon@2x.png */,
+				66A5E3311836FC4200C1D547 /* stories_on_stix_icon@2x.png */,
+			);
+			path = Images;
 			sourceTree = "<group>";
 		};
 		66FD5B6A1836DBF400ED948C /* Models */ = {
@@ -256,8 +302,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				66A5E3321836FC4200C1D547 /* cravings_tracker_icon@2x.png in Resources */,
+				66A5E3341836FC4200C1D547 /* lotus_wei_icon@2x.png in Resources */,
 				6654A6591836D66000CA2719 /* InfoPlist.strings in Resources */,
 				6654A6641836D66000CA2719 /* Images.xcassets in Resources */,
+				66A5E3331836FC4200C1D547 /* idea_bucket_icon@2x.png in Resources */,
+				66A5E3351836FC4300C1D547 /* stories_on_stix_icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -278,9 +328,11 @@
 			files = (
 				66FD5B6D1836DC8400ED948C /* FontSelectionViewController.m in Sources */,
 				6654A65F1836D66000CA2719 /* AppDelegate.m in Sources */,
+				66A5E32C1836FABE00C1D547 /* AppSelectionView.m in Sources */,
 				6654A65B1836D66000CA2719 /* main.m in Sources */,
 				66FD5B701836DD2700ED948C /* FontSelectionView.m in Sources */,
 				66FD5B661836D96800ED948C /* RootViewController.m in Sources */,
+				66A5E3281836F60700C1D547 /* AppSelectionViewController.m in Sources */,
 				6654A6621836D66000CA2719 /* JobAppApp.xcdatamodeld in Sources */,
 				66FD5B731836E26B00ED948C /* Quiz.m in Sources */,
 			);
