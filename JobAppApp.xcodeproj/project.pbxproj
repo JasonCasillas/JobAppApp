@@ -30,6 +30,9 @@
 		66A5E3331836FC4200C1D547 /* idea_bucket_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 66A5E32F1836FC4200C1D547 /* idea_bucket_icon@2x.png */; };
 		66A5E3341836FC4200C1D547 /* lotus_wei_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 66A5E3301836FC4200C1D547 /* lotus_wei_icon@2x.png */; };
 		66A5E3351836FC4300C1D547 /* stories_on_stix_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 66A5E3311836FC4200C1D547 /* stories_on_stix_icon@2x.png */; };
+		66AC92C61839386C000BF09B /* UIColor+CustomColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AC92C51839386C000BF09B /* UIColor+CustomColors.m */; };
+		66AC92CA18395C6B000BF09B /* UIFont+CustomFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AC92C918395C6B000BF09B /* UIFont+CustomFont.m */; };
+		66AC92CD18395FC9000BF09B /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AC92CC18395FC9000BF09B /* Constants.m */; };
 		66B2127A1837D5CC00BB8947 /* FinalQuestionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66B212791837D5CC00BB8947 /* FinalQuestionViewController.m */; };
 		66B2127E1837D5F900BB8947 /* FinalQuestionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 66B2127D1837D5F900BB8947 /* FinalQuestionView.m */; };
 		66B212811837E3C000BB8947 /* Quiz.m in Sources */ = {isa = PBXBuildFile; fileRef = 66B212801837E3C000BB8947 /* Quiz.m */; };
@@ -80,6 +83,12 @@
 		66A5E32F1836FC4200C1D547 /* idea_bucket_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "idea_bucket_icon@2x.png"; sourceTree = "<group>"; };
 		66A5E3301836FC4200C1D547 /* lotus_wei_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lotus_wei_icon@2x.png"; sourceTree = "<group>"; };
 		66A5E3311836FC4200C1D547 /* stories_on_stix_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stories_on_stix_icon@2x.png"; sourceTree = "<group>"; };
+		66AC92C41839386C000BF09B /* UIColor+CustomColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+CustomColors.h"; path = "Categories/UIColor+CustomColors.h"; sourceTree = "<group>"; };
+		66AC92C51839386C000BF09B /* UIColor+CustomColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+CustomColors.m"; path = "Categories/UIColor+CustomColors.m"; sourceTree = "<group>"; };
+		66AC92C818395C6B000BF09B /* UIFont+CustomFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIFont+CustomFont.h"; path = "Categories/UIFont+CustomFont.h"; sourceTree = "<group>"; };
+		66AC92C918395C6B000BF09B /* UIFont+CustomFont.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIFont+CustomFont.m"; path = "Categories/UIFont+CustomFont.m"; sourceTree = "<group>"; };
+		66AC92CB18395FC9000BF09B /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Constants.h; path = Shared/Constants.h; sourceTree = "<group>"; };
+		66AC92CC18395FC9000BF09B /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Constants.m; path = Shared/Constants.m; sourceTree = "<group>"; };
 		66B212781837D5CC00BB8947 /* FinalQuestionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FinalQuestionViewController.h; path = "View Controllers/FinalQuestionViewController.h"; sourceTree = "<group>"; };
 		66B212791837D5CC00BB8947 /* FinalQuestionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FinalQuestionViewController.m; path = "View Controllers/FinalQuestionViewController.m"; sourceTree = "<group>"; };
 		66B2127C1837D5F900BB8947 /* FinalQuestionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FinalQuestionView.h; path = Views/FinalQuestionView.h; sourceTree = "<group>"; };
@@ -178,6 +187,8 @@
 				66A5E3251836F5CD00C1D547 /* Font Selection */,
 				6654A6631836D66000CA2719 /* Images.xcassets */,
 				66FD5B6A1836DBF400ED948C /* Models */,
+				66AC92C718393871000BF09B /* Categories */,
+				66AC92CE18395FD4000BF09B /* Shared */,
 				66A5E32D1836FC4200C1D547 /* Images */,
 				6654A6551836D66000CA2719 /* Supporting Files */,
 			);
@@ -244,6 +255,26 @@
 				66A5E3311836FC4200C1D547 /* stories_on_stix_icon@2x.png */,
 			);
 			path = Images;
+			sourceTree = "<group>";
+		};
+		66AC92C718393871000BF09B /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				66AC92C41839386C000BF09B /* UIColor+CustomColors.h */,
+				66AC92C51839386C000BF09B /* UIColor+CustomColors.m */,
+				66AC92C818395C6B000BF09B /* UIFont+CustomFont.h */,
+				66AC92C918395C6B000BF09B /* UIFont+CustomFont.m */,
+			);
+			name = Categories;
+			sourceTree = "<group>";
+		};
+		66AC92CE18395FD4000BF09B /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				66AC92CB18395FC9000BF09B /* Constants.h */,
+				66AC92CC18395FC9000BF09B /* Constants.m */,
+			);
+			name = Shared;
 			sourceTree = "<group>";
 		};
 		66B2127B1837D5D400BB8947 /* Final Question */ = {
@@ -367,11 +398,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				66B212811837E3C000BB8947 /* Quiz.m in Sources */,
+				66AC92CA18395C6B000BF09B /* UIFont+CustomFont.m in Sources */,
 				66FD5B6D1836DC8400ED948C /* FontSelectionViewController.m in Sources */,
+				66AC92CD18395FC9000BF09B /* Constants.m in Sources */,
 				661C98DB18371B7400286AFE /* PuzzleView.m in Sources */,
 				6654A65F1836D66000CA2719 /* AppDelegate.m in Sources */,
 				66A5E32C1836FABE00C1D547 /* AppSelectionView.m in Sources */,
 				6654A65B1836D66000CA2719 /* main.m in Sources */,
+				66AC92C61839386C000BF09B /* UIColor+CustomColors.m in Sources */,
 				661C98D818371AB900286AFE /* PuzzleViewController.m in Sources */,
 				66FD5B701836DD2700ED948C /* FontSelectionView.m in Sources */,
 				66B2127E1837D5F900BB8947 /* FinalQuestionView.m in Sources */,

@@ -8,6 +8,11 @@
 
 #import "FinalQuestionView.h"
 
+#import "UIColor+CustomColors.h"
+#import "UIFont+CustomFont.h"
+
+#import "Constants.h"
+
 @implementation FinalQuestionView
 
 - (id)initWithFrame:(CGRect)frame
@@ -15,19 +20,15 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-        self.backgroundColor = [UIColor colorWithRed:19.0/255.0 green:22.0/255.0 blue:29.0/255.0 alpha:1.0];
-
-        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-        NSString *fontName = [userDefaults valueForKey:@"fontName"];
+        self.backgroundColor = [UIColor backgroundBlue];
 
         NSString *finalQuestionString = @"This is a pretty simple app, but does it give you enough insight into how I code?";
-        UIFont *labelFont = [UIFont fontWithName:fontName size:30.0];
+        UIFont *labelFont = [UIFont selectedFontOfSize:30.0];
         float labelPadding = 20.0;
         float buttonGap = 20.0;
-        float buttonHeight = 50.0;
 
         CGRect finalQuestionLabelBoundingRect = [finalQuestionString boundingRectWithSize:CGSizeMake(self.bounds.size.width-labelPadding*2.0,
-                                                                                                     self.bounds.size.height-(buttonHeight*2.0+buttonGap))
+                                                                                                     self.bounds.size.height-(TEXT_BUTTON_HEIGHT*2.0+buttonGap))
                                                                                   options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading)
                                                                                attributes:[NSDictionary dictionaryWithObject:labelFont
                                                                                                                     forKey:NSFontAttributeName]
@@ -41,18 +42,18 @@
         finalQuestionLabel.lineBreakMode = NSLineBreakByWordWrapping;
         finalQuestionLabel.text = finalQuestionString;
         finalQuestionLabel.backgroundColor = [UIColor clearColor];
-        finalQuestionLabel.textColor = [UIColor colorWithRed:115.0/255.0 green:148.0/255.0 blue:191.0/255.0 alpha:1.0];
+        finalQuestionLabel.textColor = [UIColor lightBlue];
         finalQuestionLabel.font = labelFont;
         [self addSubview:finalQuestionLabel];
 
-        UIFont *buttonFont = [UIFont fontWithName:fontName size:30.0];
+        UIFont *buttonFont = [UIFont selectedFontOfSize:30.0];
         enoughInfoButton = [UIButton buttonWithType:UIButtonTypeSystem];
         [enoughInfoButton setTitle:@"Yep" forState:UIControlStateNormal];
         [enoughInfoButton setFrame:CGRectMake(floorf(self.bounds.size.width/2-finalQuestionLabelBoundingRect.size.width/2),
-                                              self.bounds.size.height-(buttonHeight*2.0+buttonGap*2.0),
+                                              self.bounds.size.height-(TEXT_BUTTON_HEIGHT*2.0+buttonGap*2.0),
                                               finalQuestionLabelBoundingRect.size.width,
-                                              buttonHeight)];
-        [enoughInfoButton setTitleColor:[UIColor colorWithRed:255.0/255.0 green:195.0/255.0 blue:26.0/255.0 alpha:1.0] forState:UIControlStateNormal];
+                                              TEXT_BUTTON_HEIGHT)];
+        [enoughInfoButton setTitleColor:[UIColor lightOrange] forState:UIControlStateNormal];
         enoughInfoButton.titleLabel.font = buttonFont;
         [enoughInfoButton addTarget:self action:@selector(tappedButton:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:enoughInfoButton];
@@ -60,10 +61,10 @@
         notEnoughInfoButton = [UIButton buttonWithType:UIButtonTypeSystem];
         [notEnoughInfoButton setTitle:@"Nope" forState:UIControlStateNormal];
         [notEnoughInfoButton setFrame:CGRectMake(floorf(self.bounds.size.width/2-finalQuestionLabelBoundingRect.size.width/2),
-                                                 enoughInfoButton.frame.origin.y+buttonHeight+buttonGap,
+                                                 enoughInfoButton.frame.origin.y+TEXT_BUTTON_HEIGHT+buttonGap,
                                                  finalQuestionLabelBoundingRect.size.width,
-                                                 buttonHeight)];
-        [notEnoughInfoButton setTitleColor:[UIColor colorWithRed:255.0/255.0 green:195.0/255.0 blue:26.0/255.0 alpha:1.0] forState:UIControlStateNormal];
+                                                 TEXT_BUTTON_HEIGHT)];
+        [notEnoughInfoButton setTitleColor:[UIColor lightOrange] forState:UIControlStateNormal];
         notEnoughInfoButton.titleLabel.font = buttonFont;
         [notEnoughInfoButton addTarget:self action:@selector(tappedButton:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:notEnoughInfoButton];
@@ -78,7 +79,7 @@
         thanksLabel.text = thankYouString;
         thanksLabel.textAlignment = NSTextAlignmentCenter;
         thanksLabel.backgroundColor = [UIColor clearColor];
-        thanksLabel.textColor = [UIColor colorWithRed:115.0/255.0 green:148.0/255.0 blue:191.0/255.0 alpha:1.0];
+        thanksLabel.textColor = [UIColor lightBlue];
         thanksLabel.font = labelFont;
         thanksLabel.hidden = YES;
         [self addSubview:thanksLabel];

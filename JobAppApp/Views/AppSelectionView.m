@@ -8,6 +8,9 @@
 
 #import "AppSelectionView.h"
 
+#import "UIColor+CustomColors.h"
+#import "UIFont+CustomFont.h"
+
 @implementation AppSelectionView
 
 - (id)initWithFrame:(CGRect)frame
@@ -15,7 +18,7 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-        self.backgroundColor = [UIColor colorWithRed:19.0/255.0 green:22.0/255.0 blue:29.0/255.0 alpha:1.0];
+        self.backgroundColor = [UIColor backgroundBlue];
 
         float buttonGap = 20.0;
         UIImage *ideaBucketImage = [UIImage imageNamed:@"idea_bucket_icon.png"];
@@ -58,11 +61,8 @@
         [cravingsTrackerButton addTarget:self action:@selector(tappedButton:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:cravingsTrackerButton];
 
-        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-        NSString *fontName = [userDefaults valueForKey:@"fontName"];
-
         NSString *appSelectionString = @"Which App Do You Like The Most";
-        UIFont *labelFont = [UIFont fontWithName:fontName size:40.0];
+        UIFont *labelFont = [UIFont selectedFontOfSize:40.0];
         CGRect appSelectionLabelBoundingRect = [appSelectionString boundingRectWithSize:CGSizeMake(self.bounds.size.width,
                                                                                                    (self.bounds.size.height-ideaBucketButton.frame.origin.y+ideaBucketButton.bounds.size.height)*2)
                                                                                 options:(NSStringDrawingUsesLineFragmentOrigin | NSStringDrawingUsesFontLeading)
@@ -78,7 +78,7 @@
         appSelectionLabel.text = appSelectionString;
         appSelectionLabel.backgroundColor = [UIColor clearColor];
         appSelectionLabel.textAlignment = NSTextAlignmentCenter;
-        appSelectionLabel.textColor = [UIColor colorWithRed:115.0/255.0 green:148.0/255.0 blue:191.0/255.0 alpha:1.0];
+        appSelectionLabel.textColor = [UIColor lightBlue];
         appSelectionLabel.font = labelFont;
         [self addSubview:appSelectionLabel];
     }

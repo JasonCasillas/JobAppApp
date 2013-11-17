@@ -8,6 +8,9 @@
 
 #import "PuzzleView.h"
 
+#import "UIColor+CustomColors.h"
+#import "UIFont+CustomFont.h"
+
 @implementation PuzzleView
 
 - (id)initWithFrame:(CGRect)frame
@@ -15,12 +18,10 @@
     self = [super initWithFrame:frame];
     if (self) {
         // Initialization code
-        self.backgroundColor = [UIColor colorWithRed:19.0/255.0 green:22.0/255.0 blue:29.0/255.0 alpha:1.0];
+        self.backgroundColor = [UIColor backgroundBlue];
         self.puzzleHasBeenSolved = NO;
 
-        NSUserDefaults *userDefaults = [NSUserDefaults standardUserDefaults];
-        NSString *fontName = [userDefaults valueForKey:@"fontName"];
-        UIFont *labelFont = [UIFont fontWithName:fontName size:40.0];
+        UIFont *labelFont = [UIFont selectedFontOfSize:40.0];
 
         NSString *suggestionHalfOneString = @"Move the";
         CGSize suggestionHalfOneLabelSize = [suggestionHalfOneString sizeWithAttributes:[NSDictionary dictionaryWithObject:labelFont forKey:NSFontAttributeName]];
@@ -30,7 +31,7 @@
                                                                            suggestionHalfOneLabelSize.height)];
         suggestionHalfOneLabel.text = suggestionHalfOneString;
         suggestionHalfOneLabel.backgroundColor = [UIColor clearColor];
-        suggestionHalfOneLabel.textColor = [UIColor colorWithRed:115.0/255.0 green:148.0/255.0 blue:191.0/255.0 alpha:1.0];
+        suggestionHalfOneLabel.textColor = [UIColor lightBlue];
         suggestionHalfOneLabel.font = labelFont;
         [self addSubview:suggestionHalfOneLabel];
 
@@ -47,7 +48,7 @@
                                                            cornerRadius:radius].CGPath;
         circleShapeLayer.position = CGPointMake(0.5, 0.5);
         circleShapeLayer.fillColor = [UIColor clearColor].CGColor;
-        circleShapeLayer.strokeColor = [UIColor colorWithRed:255.0/255.0 green:195.0/255.0 blue:26.0/255.0 alpha:1.0].CGColor;
+        circleShapeLayer.strokeColor = [UIColor lightOrange].CGColor;
         circleShapeLayer.lineWidth = 2.0;
         [circleViewLayer addSublayer:circleShapeLayer];
 
@@ -61,7 +62,7 @@
                                                                            suggestionHalfTwoLabelSize.height)];
         suggestionHalfTwoLabel.text = suggestionHalfTwoString;
         suggestionHalfTwoLabel.backgroundColor = [UIColor clearColor];
-        suggestionHalfTwoLabel.textColor = [UIColor colorWithRed:115.0/255.0 green:148.0/255.0 blue:191.0/255.0 alpha:1.0];
+        suggestionHalfTwoLabel.textColor = [UIColor lightBlue];
         suggestionHalfTwoLabel.font = labelFont;
         [self addSubview:suggestionHalfTwoLabel];
 
@@ -72,7 +73,7 @@
 
         CALayer *squareViewLayer = [squareView layer];
         squareViewLayer.borderWidth = 2.0;
-        squareViewLayer.borderColor = [UIColor colorWithRed:255.0/255.0 green:195.0/255.0 blue:26.0/255.0 alpha:1.0].CGColor;
+        squareViewLayer.borderColor = [UIColor lightOrange].CGColor;
 
         [self addSubview:squareView];
 
