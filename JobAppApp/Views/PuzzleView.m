@@ -98,14 +98,14 @@
 
 
 #pragma mark - Location Calculation Methods
-- (BOOL)circleIsWithinSquare
+- (BOOL)view:(UIView *)movingView isWithinView:(UIView *)containingView
 {
     // Check if starting x and y points of circle are greater than those of the square
     // And if ending x and y points of circle are less than those of the square
-    if (circleView.frame.origin.x >= squareView.frame.origin.x &&
-        circleView.frame.origin.y >= squareView.frame.origin.y &&
-        circleView.frame.origin.x+circleView.bounds.size.width <= squareView.frame.origin.x+squareView.bounds.size.width &&
-        circleView.frame.origin.y+circleView.bounds.size.height <= squareView.frame.origin.y+squareView.bounds.size.height) {
+    if (movingView.frame.origin.x >= containingView.frame.origin.x &&
+        movingView.frame.origin.y >= containingView.frame.origin.y &&
+        movingView.frame.origin.x+movingView.bounds.size.width <= containingView.frame.origin.x+containingView.bounds.size.width &&
+        movingView.frame.origin.y+movingView.bounds.size.height <= containingView.frame.origin.y+containingView.bounds.size.height) {
         return YES;
     }
     return NO;
@@ -122,7 +122,7 @@
     CGPoint point = [recognizer locationInView:self];
     [circleView setCenter:point];
 
-    if ([self circleIsWithinSquare]) {
+    if ([self view:circleView isWithinView:squareView]) {
         [self.delegate puzzleViewPlacedCircleInSquare];
     }
 }
@@ -143,7 +143,7 @@
         bounds.size.height = floorf(squareStartingWidth*scaleValue);
         squareView.bounds = bounds;
 
-        if ([self circleIsWithinSquare]) {
+        if ([self view:circleView isWithinView:squareView]) {
             [self.delegate puzzleViewPlacedCircleInSquare];
         }
     }

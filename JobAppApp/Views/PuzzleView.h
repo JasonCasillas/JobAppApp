@@ -29,7 +29,7 @@
 
 - (void)handlePanGesture:(UIPanGestureRecognizer *)recognizer;
 - (void)handlePinchGesture:(UIPinchGestureRecognizer *)recognizer;
-- (BOOL)circleIsWithinSquare;
+- (BOOL)view:(UIView *)movingView isWithinView:(UIView *)containingView;
 @end
 
 @protocol PuzzleViewDelegate <NSObject>

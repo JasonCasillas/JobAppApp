@@ -8,6 +8,8 @@
 
 #import <XCTest/XCTest.h>
 
+#import "PuzzleView.h"
+
 @interface JobAppAppTests : XCTestCase
 
 @end
@@ -26,9 +28,60 @@
     [super tearDown];
 }
 
-- (void)testExample
+//- (void)testExample
+//{
+//    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+//}
+
+- (void)testMovingViewIsWithinContainingViewIfContainingViewIsLargeEnoughAndMovingViewIsWithinIt
 {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    PuzzleView *puzzleView = [[PuzzleView alloc] initWithFrame:CGRectMake(0, 0, 200.0, 200.0)];
+
+    UIView *containingView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 20.0, 20.0)];
+    [puzzleView addSubview:containingView];
+
+    UIView *movingView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 10.0, 10.0)];
+    [puzzleView addSubview:movingView];
+
+    XCTAssertTrue([puzzleView view:movingView isWithinView:containingView], @"Should have been within the boundaries");
 }
 
+- (void)testMovingViewIsNotWithinContainingViewIfContainingViewIsLargeEnoughAndMovingViewIsOutsideIt
+{
+    PuzzleView *puzzleView = [[PuzzleView alloc] initWithFrame:CGRectMake(0, 0, 200.0, 200.0)];
+
+    UIView *containingView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 20.0, 20.0)];
+    [puzzleView addSubview:containingView];
+
+    UIView *movingView = [[UIView alloc] initWithFrame:CGRectMake(21.0, 21.0, 10.0, 10.0)];
+    [puzzleView addSubview:movingView];
+
+    XCTAssertFalse([puzzleView view:movingView isWithinView:containingView], @"Should not have been within the boundaries");
+}
+
+- (void)testMovingViewIsNotWithinContainingViewIfContainingViewIsNotLargeEnoughAndMovingViewIsInsideIt
+{
+    PuzzleView *puzzleView = [[PuzzleView alloc] initWithFrame:CGRectMake(0, 0, 200.0, 200.0)];
+
+    UIView *containingView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 10.0, 10.0)];
+    [puzzleView addSubview:containingView];
+
+    UIView *movingView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 11.0, 11.0)];
+    [puzzleView addSubview:movingView];
+
+    XCTAssertFalse([puzzleView view:movingView isWithinView:containingView], @"Should not have been small enough to fit");
+}
+
+- (void)testMovingViewIsNotWithinContainingViewIfContainingViewIsNotLargeEnoughAndMovingViewIsOutsideIt
+{
+    PuzzleView *puzzleView = [[PuzzleView alloc] initWithFrame:CGRectMake(0, 0, 200.0, 200.0)];
+
+    UIView *containingView = [[UIView alloc] initWithFrame:CGRectMake(0.0, 0.0, 10.0, 10.0)];
+    [puzzleView addSubview:containingView];
+
+    UIView *movingView = [[UIView alloc] initWithFrame:CGRectMake(11.0, 11.0, 20.0, 20.0)];
+    [puzzleView addSubview:movingView];
+
+    XCTAssertFalse([puzzleView view:movingView isWithinView:containingView], @"Should not have been small enough to fit, nor within the boundaries");
+}
 @end
