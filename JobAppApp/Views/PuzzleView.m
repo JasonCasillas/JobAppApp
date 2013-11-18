@@ -77,6 +77,9 @@
 
         [self addSubview:squareView];
 
+        //Put the circle view in front, in case the squareView is enlarged enough to make it difficult to grab, but not enough to fully enclose it
+        [self bringSubviewToFront:circleView];
+
         circlePanGestureRecognizer = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGesture:)];
         [circleView addGestureRecognizer:circlePanGestureRecognizer];
 
