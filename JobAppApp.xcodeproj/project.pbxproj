@@ -26,10 +26,6 @@
 		6654A6781836D66100CA2719 /* JobAppAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6654A6771836D66100CA2719 /* JobAppAppTests.m */; };
 		66A5E3281836F60700C1D547 /* AppSelectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A5E3271836F60700C1D547 /* AppSelectionViewController.m */; };
 		66A5E32C1836FABE00C1D547 /* AppSelectionView.m in Sources */ = {isa = PBXBuildFile; fileRef = 66A5E32B1836FABE00C1D547 /* AppSelectionView.m */; };
-		66A5E3321836FC4200C1D547 /* cravings_tracker_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 66A5E32E1836FC4200C1D547 /* cravings_tracker_icon@2x.png */; };
-		66A5E3331836FC4200C1D547 /* idea_bucket_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 66A5E32F1836FC4200C1D547 /* idea_bucket_icon@2x.png */; };
-		66A5E3341836FC4200C1D547 /* lotus_wei_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 66A5E3301836FC4200C1D547 /* lotus_wei_icon@2x.png */; };
-		66A5E3351836FC4300C1D547 /* stories_on_stix_icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 66A5E3311836FC4200C1D547 /* stories_on_stix_icon@2x.png */; };
 		66AC92C61839386C000BF09B /* UIColor+CustomColors.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AC92C51839386C000BF09B /* UIColor+CustomColors.m */; };
 		66AC92CA18395C6B000BF09B /* UIFont+CustomFont.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AC92C918395C6B000BF09B /* UIFont+CustomFont.m */; };
 		66AC92CD18395FC9000BF09B /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = 66AC92CC18395FC9000BF09B /* Constants.m */; };
@@ -79,10 +75,6 @@
 		66A5E3271836F60700C1D547 /* AppSelectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppSelectionViewController.m; path = "View Controllers/AppSelectionViewController.m"; sourceTree = "<group>"; };
 		66A5E32A1836FABE00C1D547 /* AppSelectionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppSelectionView.h; path = Views/AppSelectionView.h; sourceTree = "<group>"; };
 		66A5E32B1836FABE00C1D547 /* AppSelectionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppSelectionView.m; path = Views/AppSelectionView.m; sourceTree = "<group>"; };
-		66A5E32E1836FC4200C1D547 /* cravings_tracker_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cravings_tracker_icon@2x.png"; sourceTree = "<group>"; };
-		66A5E32F1836FC4200C1D547 /* idea_bucket_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "idea_bucket_icon@2x.png"; sourceTree = "<group>"; };
-		66A5E3301836FC4200C1D547 /* lotus_wei_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lotus_wei_icon@2x.png"; sourceTree = "<group>"; };
-		66A5E3311836FC4200C1D547 /* stories_on_stix_icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stories_on_stix_icon@2x.png"; sourceTree = "<group>"; };
 		66AC92C41839386C000BF09B /* UIColor+CustomColors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIColor+CustomColors.h"; path = "Categories/UIColor+CustomColors.h"; sourceTree = "<group>"; };
 		66AC92C51839386C000BF09B /* UIColor+CustomColors.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIColor+CustomColors.m"; path = "Categories/UIColor+CustomColors.m"; sourceTree = "<group>"; };
 		66AC92C818395C6B000BF09B /* UIFont+CustomFont.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIFont+CustomFont.h"; path = "Categories/UIFont+CustomFont.h"; sourceTree = "<group>"; };
@@ -189,7 +181,6 @@
 				66FD5B6A1836DBF400ED948C /* Models */,
 				66AC92C718393871000BF09B /* Categories */,
 				66AC92CE18395FD4000BF09B /* Shared */,
-				66A5E32D1836FC4200C1D547 /* Images */,
 				6654A6551836D66000CA2719 /* Supporting Files */,
 			);
 			path = JobAppApp;
@@ -244,17 +235,6 @@
 				66A5E32B1836FABE00C1D547 /* AppSelectionView.m */,
 			);
 			name = "App Selection";
-			sourceTree = "<group>";
-		};
-		66A5E32D1836FC4200C1D547 /* Images */ = {
-			isa = PBXGroup;
-			children = (
-				66A5E32E1836FC4200C1D547 /* cravings_tracker_icon@2x.png */,
-				66A5E32F1836FC4200C1D547 /* idea_bucket_icon@2x.png */,
-				66A5E3301836FC4200C1D547 /* lotus_wei_icon@2x.png */,
-				66A5E3311836FC4200C1D547 /* stories_on_stix_icon@2x.png */,
-			);
-			path = Images;
 			sourceTree = "<group>";
 		};
 		66AC92C718393871000BF09B /* Categories */ = {
@@ -373,12 +353,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				66A5E3321836FC4200C1D547 /* cravings_tracker_icon@2x.png in Resources */,
-				66A5E3341836FC4200C1D547 /* lotus_wei_icon@2x.png in Resources */,
 				6654A6591836D66000CA2719 /* InfoPlist.strings in Resources */,
 				6654A6641836D66000CA2719 /* Images.xcassets in Resources */,
-				66A5E3331836FC4200C1D547 /* idea_bucket_icon@2x.png in Resources */,
-				66A5E3351836FC4300C1D547 /* stories_on_stix_icon@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

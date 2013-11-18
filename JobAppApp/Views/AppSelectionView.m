@@ -21,7 +21,7 @@
         self.backgroundColor = [UIColor backgroundBlue];
 
         float buttonGap = 20.0;
-        UIImage *ideaBucketImage = [UIImage imageNamed:@"idea_bucket_icon.png"];
+        UIImage *ideaBucketImage = [UIImage imageNamed:@"icon_idea_bucket.png"];
         ideaBucketButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [ideaBucketButton setImage:ideaBucketImage forState:UIControlStateNormal];
         [ideaBucketButton setFrame:CGRectMake(buttonGap,
@@ -31,7 +31,7 @@
         [ideaBucketButton addTarget:self action:@selector(tappedButton:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:ideaBucketButton];
 
-        UIImage *lotusWeiImage = [UIImage imageNamed:@"lotus_wei_icon.png"];
+        UIImage *lotusWeiImage = [UIImage imageNamed:@"icon_lotus_wei.png"];
         lotusWeiButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [lotusWeiButton setImage:lotusWeiImage forState:UIControlStateNormal];
         [lotusWeiButton setFrame:CGRectMake(self.bounds.size.width-buttonGap-lotusWeiImage.size.width,
@@ -41,7 +41,7 @@
         [lotusWeiButton addTarget:self action:@selector(tappedButton:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:lotusWeiButton];
 
-        UIImage *storiesOnStixImage = [UIImage imageNamed:@"stories_on_stix_icon.png"];
+        UIImage *storiesOnStixImage = [UIImage imageNamed:@"icon_stories_on_stix.png"];
         storiesOnStixButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [storiesOnStixButton setImage:storiesOnStixImage forState:UIControlStateNormal];
         [storiesOnStixButton setFrame:CGRectMake(buttonGap,
@@ -51,7 +51,7 @@
         [storiesOnStixButton addTarget:self action:@selector(tappedButton:) forControlEvents:UIControlEventTouchUpInside];
         [self addSubview:storiesOnStixButton];
 
-        UIImage *cravingsTrackerImage = [UIImage imageNamed:@"cravings_tracker_icon.png"];
+        UIImage *cravingsTrackerImage = [UIImage imageNamed:@"icon_cravings_tracker.png"];
         cravingsTrackerButton = [UIButton buttonWithType:UIButtonTypeCustom];
         [cravingsTrackerButton setImage:cravingsTrackerImage forState:UIControlStateNormal];
         [cravingsTrackerButton setFrame:CGRectMake(self.bounds.size.width-buttonGap-cravingsTrackerImage.size.width,
